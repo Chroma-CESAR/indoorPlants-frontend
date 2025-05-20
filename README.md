@@ -2,7 +2,7 @@
 
 Aplicativo mobile desenvolvido em [React Native](https://reactnative.dev/) com [Expo](https://expo.dev/), focado em recomendar plantas de interior com base em preferências do usuário e características do ambiente.
 
-## Funcionalidades
+## 📱 Funcionalidades
 
 - Cadastro do nome do usuário
 - Formulário para mapear as caracteristicas 
