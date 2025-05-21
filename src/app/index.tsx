@@ -4,6 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { Input } from '@/components/input';
 import { Button } from '@/components/button';
 import { Step } from '@/components/step';
+import axios from 'axios';
 
 export default function FormStep1() {
   const router = useRouter();
@@ -18,7 +19,11 @@ export default function FormStep1() {
         <Text>Como quer ser chamado(a)?</Text>
         <Input value={nome} onChangeText={setNome} />
       </View>
-      <Button title="Próximo" onPress={() => router.push({ pathname: '/objetivos', params: { nome } })} />
+      <Button
+        title="Próximo"
+        onPress={() => router.push(`/pets?nome=${encodeURIComponent(nome)}` as any)
+      }
+      />
     </View>
   );
 }

@@ -1,5 +1,10 @@
 import { Stack } from 'expo-router';
+import { FormProvider } from '../context/formContext';
 
 export default function Layout() {
-  return <Stack screenOptions={{ headerShown: false }} />;
+  return (
+    <FormProvider>
+      <Stack screenOptions={{ headerShown: false }} />
+    </FormProvider>
+  );
 }
