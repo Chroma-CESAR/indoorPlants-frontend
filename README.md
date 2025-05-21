@@ -5,7 +5,7 @@ Aplicativo mobile desenvolvido em [React Native](https://reactnative.dev/) com [
 ## 📱 Funcionalidades
 
 - Cadastro do nome do usuário
-- Formulário para mapear as caracteristicas 
+- Formulário para mapear as caracteristicas
 - Recomendação de plantas de acordo com as escolhas
 
 ## 🚀 Tecnologias
@@ -40,14 +40,25 @@ Para executar este projeto localmente, siga os passos abaixo:
    npm install
    ```
 
-5. **Inicie o projeto** com o comando:
+5. ** modifique o ip da URL do axios para seu ip** :
+
+   **5.1 Em qualquer terminal encontre o ip da sua máquina** com o comando:
+   no linux:
+
+   ```bash
+   hostname -I
+   ```
+
+   **5.1 Na pasta do projeto, procure o arquivo src/app/resultados.tsx substitua o ip pelo da sua maquina**
+
+   ```bash
+   const response = await axios.post('http://199.156.1.15:8000/match', data);
+   ```
+
+6. **Inicie o projeto** com o comando:
 
    ```bash
    expo start
    ```
 
-   Isso abrirá uma aba no navegador com um QR Code. Você pode escaneá-lo usando o app **Expo Go** no seu celular (disponível na Play Store e App Store) para visualizar o app em tempo real.
-
-
-
-  
+   Isso abrirá um QR Code no terminal. Recomendamos escaneá-lo usando o app **Expo Go** no seu celular (disponível na Play Store e App Store) para visualizar o app em tempo real. Na versão web não será possível realizar as requests.
