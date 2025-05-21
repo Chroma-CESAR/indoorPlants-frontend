@@ -40,7 +40,7 @@ Para executar este projeto localmente, siga os passos abaixo:
    npm install
    ```
 
-5. ** modifique o ip da URL do axios para seu ip** :
+5. **Modifique o ip da URL do axios para seu ip** :
 
    **5.1 Em qualquer terminal encontre o ip da sua máquina** com o comando:
    no linux:
