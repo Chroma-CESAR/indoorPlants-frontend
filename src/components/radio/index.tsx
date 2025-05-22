@@ -1,44 +1,52 @@
-import React from 'react';
-import { Pressable, Text, View, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 
-type RadioProps = {
+type Props = {
   label: string;
   selected: boolean;
   onPress: () => void;
 };
 
-export function Radio({ label, selected, onPress }: RadioProps) {
+export function Radio({ label, selected, onPress }: Props) {
   return (
-    <Pressable style={styles.container} onPress={onPress}>
-      <View style={styles.outerCircle}>
+    <TouchableOpacity style={[styles.option, selected && styles.selected]} onPress={onPress} activeOpacity={0.7}>
+      <View style={[styles.circle, selected && styles.selectedCircle]}>
         {selected && <View style={styles.innerCircle} />}
       </View>
       <Text style={styles.label}>{label}</Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  option: {
+    backgroundColor: '#D3E8DC',
+    borderRadius: 8,
+    padding: 12,
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: 8,
   },
-  outerCircle: {
+  selected: {
+    backgroundColor: '#A5D6BE', 
+  },
+  circle: {
     width: 20,
     height: 20,
     borderRadius: 10,
     borderWidth: 2,
-    borderColor: '#161D17',
-    alignItems: 'center',
+    borderColor: '#006D3B',
     justifyContent: 'center',
+    alignItems: 'center',
     marginRight: 12,
+  },
+  selectedCircle: {
+    borderColor: '#006D3B',
   },
   innerCircle: {
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: '#161D17',
+    backgroundColor: '#006D3B',
   },
   label: {
     fontSize: 16,

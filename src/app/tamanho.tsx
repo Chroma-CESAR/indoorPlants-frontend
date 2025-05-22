@@ -7,10 +7,10 @@ import { Button, BackButton } from '@/components/button';
 import { useForm } from '../context/formContext';
 
 const opcoes = [
-  { label: 'Pequeno', value: 0 },
-  { label: 'Médio', value: 1 },
-  { label: 'Grande', value: 2 },
-  { label: 'Muito Grande', value: 3 },
+  { label: 'Pequeno - até 30 cm', value: 0 },
+  { label: 'Médio - 31 cm até 90 cm', value: 1 },
+  { label: 'Grande - 91 cm a 150 cm', value: 2 },
+  { label: 'Muito Grande - acima de 150 cm', value: 3 },
 ];
 
 export default function Tamanho() {
@@ -23,8 +23,8 @@ export default function Tamanho() {
       <View style={styles.topContent}>
         <Text style={styles.subheader}>Tamanho do Espaço</Text>
         <Step currentStep={4} />
-        <Text style={styles.title}>Qual o tamanho da sua casa ou apartamento?</Text>
-        <Text>Escolha uma opção:</Text>
+        <Text style={styles.title}>Quanto espaço poderá dedicar a plantinha?</Text>
+        <Text>Espaço que a planta irá ocupar:</Text>
 
         {opcoes.map((opcao) => (
           <Radio

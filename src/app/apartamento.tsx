@@ -21,8 +21,8 @@ export default function Apartamento() {
       <View style={styles.topContent}>
         <Text style={styles.subheader}>Ambiente</Text>
         <Step currentStep={3} />
-        <Text style={styles.title}>Você mora em apartamento?</Text>
-        <Text>Escolha uma opção:</Text>
+        <Text style={styles.title}>Sua plantinha vai morar em apartamento?</Text>
+        <Text>Você mora em apartamento?</Text>
 
         {opcoes.map((opcao) => (
           <Radio

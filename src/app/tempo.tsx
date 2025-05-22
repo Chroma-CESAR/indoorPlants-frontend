@@ -7,9 +7,9 @@ import { Button, BackButton } from '@/components/button';
 import { useForm } from '../context/formContext';
 
 const opcoes = [
-  { label: 'Pouco tempo', value: 0 },
-  { label: 'Tempo médio', value: 1 },
-  { label: 'Muito tempo', value: 2 },
+  { label: 'Quase nenhum tempo', value: 0 },
+  { label: 'Poucas horas por semana', value: 1 },
+  { label: 'Quero dedicar bastante tempo', value: 2 },
 ];
 
 export default function Tempo() {
@@ -22,8 +22,8 @@ export default function Tempo() {
       <View style={styles.topContent}>
         <Text style={styles.subheader}>Disponibilidade</Text>
         <Step currentStep={6} />
-        <Text style={styles.title}>Quanto tempo você tem para cuidar das plantas?</Text>
-        <Text>Escolha uma opção:</Text>
+        <Text style={styles.title}>Agora queremos entender um pouco sobre você!</Text>
+        <Text>Quanto tempo você acredita que possa se dedicar a cuidar de sua plantinha?</Text>
 
         {opcoes.map((opcao) => (
           <Radio
