@@ -19,11 +19,13 @@ export default function FormStep1() {
         <Text>Como quer ser chamado(a)?</Text>
         <Input value={nome} onChangeText={setNome} />
       </View>
-      <Button
-        title="Próximo"
-        onPress={() => router.push(`/pets?nome=${encodeURIComponent(nome)}` as any)
-      }
-      />
+      <View style={{ flexDirection: 'row' }}>
+        <Button
+          title="Próximo"
+          onPress={() => router.push(`/pets?nome=${encodeURIComponent(nome)}` as any)
+        }
+        />
+      </View>
     </View>
   );
 }

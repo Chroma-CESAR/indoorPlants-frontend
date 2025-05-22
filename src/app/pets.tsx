@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useState } from 'react';
 import { Step } from '@/components/step';
 import { Radio } from '@/components/radio';
-import { Button } from '@/components/button';
+import { Button, BackButton } from '@/components/button';
 import { useForm } from '../context/formContext';
 
 const opcoes = [
@@ -34,14 +34,17 @@ export default function Pets() {
           />
         ))}
       </View>
-      <Button
-        title="Próximo"
-        onPress={() => {
-          setField('ind_pets', pet);
-          router.push('/apartamento' as any);
-        }}
-        disabled={pet === null}
+      <View style={{ flexDirection: 'row' }}>
+        <BackButton />
+        <Button
+          title="Próximo"
+          onPress={() => {
+            setField('ind_pets', pet);
+            router.push('/apartamento' as any);
+          }}
+          disabled={pet === null}
       />
+      </View>
     </View>
   );
 }

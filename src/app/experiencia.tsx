@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useState } from 'react';
 import { Step } from '@/components/step';
 import { Radio } from '@/components/radio';
-import { Button } from '@/components/button';
+import { BackButton, Button } from '@/components/button';
 import { useForm } from '../context/formContext';
 
 const opcoes = [
@@ -34,14 +34,17 @@ export default function Experiencia() {
           />
         ))}
       </View>
-      <Button
-        title="Próximo"
-        onPress={() => {
-          setField('experience_level_code', nivel);
-          router.push('/tempo' as any);
-        }}
-        disabled={nivel === null}
-      />
+      <View style={{ flexDirection: 'row' }}>
+        <BackButton />
+        <Button
+          title="Próximo"
+          onPress={() => {
+            setField('experience_level_code', nivel);
+            router.push('/tempo' as any);
+          }}
+          disabled={nivel === null}
+        />
+      </View>
     </View>
   );
 }

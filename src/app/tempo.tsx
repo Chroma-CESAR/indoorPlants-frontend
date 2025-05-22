@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useState } from 'react';
 import { Step } from '@/components/step';
 import { Radio } from '@/components/radio';
-import { Button } from '@/components/button';
+import { Button, BackButton } from '@/components/button';
 import { useForm } from '../context/formContext';
 
 const opcoes = [
@@ -34,14 +34,17 @@ export default function Tempo() {
           />
         ))}
       </View>
-      <Button
-        title="Ver resultado"
-        onPress={() => {
-          setField('disponibility_level_code', tempo);
-          router.push('/resultado' as any);
-        }}
-        disabled={tempo === null}
-      />
+      <View style={{ flexDirection: 'row' }}>
+        <BackButton />
+        <Button
+          title="Ver resultado"
+          onPress={() => {
+            setField('disponibility_level_code', tempo);
+            router.push('/resultado' as any);
+          }}
+          disabled={tempo === null}
+        />
+      </View>
     </View>
   );
 }

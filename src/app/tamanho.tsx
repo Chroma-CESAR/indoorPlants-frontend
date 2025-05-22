@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useState } from 'react';
 import { Step } from '@/components/step';
 import { Radio } from '@/components/radio';
-import { Button } from '@/components/button';
+import { Button, BackButton } from '@/components/button';
 import { useForm } from '../context/formContext';
 
 const opcoes = [
@@ -35,14 +35,17 @@ export default function Tamanho() {
           />
         ))}
       </View>
-      <Button
-        title="Próximo"
-        onPress={() => {
-          setField('size_code', tamanho);
-          router.push('/experiencia' as any);
-        }}
-        disabled={tamanho === null}
-      />
+      <View style={{ flexDirection: 'row' }}>
+        <BackButton />
+        <Button
+          title="Próximo"
+          onPress={() => {
+            setField('size_code', tamanho);
+            router.push('/experiencia' as any);
+          }}
+          disabled={tamanho === null}
+        />
+      </View>
     </View>
   );
 }
