@@ -1,20 +1,30 @@
 import { View } from "react-native";
 import { StyleSheet } from "react-native";
 
-export function Step(){
-  return(
+type Props = {
+  currentStep: number;
+  totalSteps?: number;
+};
+
+export function Step({ currentStep, totalSteps = 6 }: Props) {
+  return (
     <View style={styles.stepContainer}>
-      {[1, 2, 3, 4, 5].map((step) => (
-        <View
-          key={step}
-          style={[
-            styles.stepBox,
-            step <= 1 ? styles.activeStep : styles.inactiveStep,
-          ]}
-        />
-      ))}
+      {Array.from({ length: totalSteps }).map((_, index) => {
+        const step = index + 1;
+        const isActive = step <= currentStep;
+
+        return (
+          <View
+            key={step}
+            style={[
+              styles.stepBox,
+              isActive ? styles.activeStep : styles.inactiveStep,
+            ]}
+          />
+        );
+      })}
     </View>
-  )
+  );
 }
 
 export const styles = StyleSheet.create({
@@ -36,5 +46,3 @@ export const styles = StyleSheet.create({
     backgroundColor: "#CCC",
   },
 });
-
-

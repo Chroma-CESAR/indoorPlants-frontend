@@ -20,7 +20,7 @@ export default function Apartamento() {
     <View style={styles.container}>
       <View style={styles.topContent}>
         <Text style={styles.subheader}>Ambiente</Text>
-        <Step />
+        <Step currentStep={3} />
         <Text style={styles.title}>Você mora em apartamento?</Text>
         <Text>Escolha uma opção:</Text>
 

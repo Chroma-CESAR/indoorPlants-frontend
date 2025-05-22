@@ -21,7 +21,7 @@ export default function Pets() {
     <View style={styles.container}>
       <View style={styles.topContent}>
         <Text style={styles.subheader}>Animais de estimação</Text>
-        <Step />
+        <Step currentStep={2} />
         <Text style={styles.title}>Olá {nome}, você tem ou pretende ter pets?</Text>
         <Text>Escolha uma opção:</Text>
 

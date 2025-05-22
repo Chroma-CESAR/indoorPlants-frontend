@@ -22,7 +22,7 @@ export default function Tamanho() {
     <View style={styles.container}>
       <View style={styles.topContent}>
         <Text style={styles.subheader}>Tamanho do Espaço</Text>
-        <Step />
+        <Step currentStep={4} />
         <Text style={styles.title}>Qual o tamanho da sua casa ou apartamento?</Text>
         <Text>Escolha uma opção:</Text>
 

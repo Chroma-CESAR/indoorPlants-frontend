@@ -21,7 +21,7 @@ export default function Tempo() {
     <View style={styles.container}>
       <View style={styles.topContent}>
         <Text style={styles.subheader}>Disponibilidade</Text>
-        <Step />
+        <Step currentStep={6} />
         <Text style={styles.title}>Quanto tempo você tem para cuidar das plantas?</Text>
         <Text>Escolha uma opção:</Text>
 

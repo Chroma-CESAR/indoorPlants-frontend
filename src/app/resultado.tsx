@@ -14,7 +14,7 @@ export default function Resultado() {
   useEffect(() => {
     async function enviarDados() {
       try {
-        const response = await axios.post('http://192.168.1.14:8000/match', data);
+        const response = await axios.post('http://192.168.0.1:8000/match', data);
         setResposta(response.data);
       } catch (err) {
         console.error(err);
@@ -31,7 +31,6 @@ export default function Resultado() {
     <View style={styles.container}>
       <View style={styles.topContent}>
         <Text style={styles.subheader}>Resultado</Text>
-        <Step />
         <Text style={styles.title}>Plantas recomendadas para você</Text>
       </View>
       {carregando ? (

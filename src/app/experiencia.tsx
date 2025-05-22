@@ -21,7 +21,7 @@ export default function Experiencia() {
     <View style={styles.container}>
       <View style={styles.topContent}>
         <Text style={styles.subheader}>Nível de Experiência</Text>
-        <Step />
+        <Step currentStep={5} />
         <Text style={styles.title}>Qual o seu nível de experiência com plantas?</Text>
         <Text>Escolha uma opção:</Text>
 

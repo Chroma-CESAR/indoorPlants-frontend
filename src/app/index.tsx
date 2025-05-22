@@ -14,7 +14,7 @@ export default function FormStep1() {
     <View style={styles.container}>
       <View style={styles.topContent}>
         <Text style={styles.subheader}>Bem-vindo</Text>
-        <Step />
+        <Step currentStep={1} />
         <Text style={styles.title}>Para começar, queremos saber um pouco mais sobre você</Text>
         <Text>Como quer ser chamado(a)?</Text>
         <Input value={nome} onChangeText={setNome} />
