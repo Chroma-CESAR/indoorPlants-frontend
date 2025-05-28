@@ -14,8 +14,10 @@ export default function Resultado() {
   useEffect(() => {
     async function enviarDados() {
       try {
-        const response = await axios.post('http://172.26.71.135/match', data);
+        const response = await axios.post('http://192.168.1.14:8000/match', data);
+        console.log(data)
         setResposta(response.data);
+        console.log(response.data)
       } catch (err) {
         console.error(err);
         setErro('Erro ao enviar dados para o servidor.');
@@ -23,6 +25,7 @@ export default function Resultado() {
         setCarregando(false);
       }
     }
+
 
     enviarDados();
   }, []);
@@ -41,10 +44,10 @@ export default function Resultado() {
         <ScrollView contentContainerStyle={styles.scrollContent}>
           {resposta.map((planta, index) => (
             <View key={index} style={styles.card}>
-              <Image source={{ uri: planta.image }} style={styles.image} />
+              <Image source={{ uri: planta.img_url }} style={styles.image} />
               <View style={styles.info}>
-                <Text style={styles.name}>{planta.plant_name}</Text>
-                <Text style={styles.group}>{planta.group}</Text>
+                <Text style={styles.name}>{planta.name}</Text>
+                <Text style={styles.group}>{planta.group_name}</Text>
                 <Text style={styles.compatibility}>Compatibilidade: {planta.compatibility}%</Text>
               </View>
             </View>
