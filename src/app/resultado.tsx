@@ -1,9 +1,7 @@
-// app/resultado.tsx
-import { View, Text, StyleSheet, ActivityIndicator, Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ActivityIndicator, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { useEffect, useState } from 'react';
 import { useForm } from '../context/formContext';
 import axios from 'axios';
-import { Step } from '@/components/step';
 
 export default function Resultado() {
   const { data } = useForm();
@@ -15,9 +13,7 @@ export default function Resultado() {
     async function enviarDados() {
       try {
         const response = await axios.post('http://192.168.1.14:8000/match', data);
-        console.log(data)
         setResposta(response.data);
-        console.log(response.data)
       } catch (err) {
         console.error(err);
         setErro('Erro ao enviar dados para o servidor.');
@@ -26,16 +22,18 @@ export default function Resultado() {
       }
     }
 
-
     enviarDados();
   }, []);
 
   return (
     <View style={styles.container}>
-      <View style={styles.topContent}>
-        <Text style={styles.subheader}>Resultado</Text>
-        <Text style={styles.title}>Plantas recomendadas para você</Text>
+      <View style={styles.header}>
+        <Text style={styles.matchText}>Match!</Text>
+        <Text style={styles.subtitle}>Plantas recomendadas para você!</Text>
+        <Image source={require('../../assets/images/li_heart.png')} style={styles.heartImage} />
+
       </View>
+
       {carregando ? (
         <ActivityIndicator size="large" color="#161D17" />
       ) : erro ? (
@@ -52,8 +50,13 @@ export default function Resultado() {
               </View>
             </View>
           ))}
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Continuar</Text>
+          </TouchableOpacity>
         </ScrollView>
       )}
+
+      
     </View>
   );
 }
@@ -61,30 +64,38 @@ export default function Resultado() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingVertical: 32,
+    backgroundColor: '#F3F9F1',
     paddingHorizontal: 16,
-    justifyContent: 'space-between',
-    gap: 16,
-    },
-  topContent: {
-    gap: 12,
-    marginBottom: 16,
+    paddingVertical:32
   },
-  title: {
-    color: '#161D17',
-    fontSize: 24,
+  header: {
+    alignItems: 'center',
+    marginBottom: 24,
+    marginTop: 10,
+  },
+  matchText: {
+    fontSize: 48,
     fontWeight: 'bold',
+    color: '#161D17',
     fontFamily: 'Inter_400Regular',
   },
-  subheader: {
+  subtitle: {
+    fontSize: 16,
     color: '#161D17',
-    fontSize: 20,
-    textAlign: 'center',
+    marginTop: 4,
     fontFamily: 'Inter_400Regular',
+  },
+  heartImage: {
+    width: 75,
+    height: 75,
+    resizeMode: 'contain',
+    marginTop: 16,
   },
   scrollContent: {
+    paddingBottom: 16,
     gap: 16,
-    paddingBottom: 32,
+    alignItems: "center",
+
   },
   card: {
     flexDirection: 'row',
@@ -95,7 +106,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 100,
-    height: 100,
+    height: 80,
   },
   info: {
     flex: 1,
@@ -103,22 +114,39 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   name: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
     color: '#161D17',
     fontFamily: 'Inter_400Regular',
   },
   group: {
-    fontSize: 14,
+    fontSize: 10,
     color: '#555',
     fontFamily: 'Inter_400Regular',
   },
   compatibility: {
-    fontSize: 14,
+    fontSize: 12,
     marginTop: 4,
     color: '#333',
     fontFamily: 'Inter_400Regular',
   },
+  button: {
+    flex: 1,
+    backgroundColor: "#006D3B",
+    borderRadius: 8,
+    height: 40,
+    width: 98,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 40,
+  },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: "400",
+    color: "#FFFFFF",
+    fontFamily: "Inter_400Regular",
+  },
+  
   error: {
     color: 'red',
     textAlign: 'center',
