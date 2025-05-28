@@ -23,7 +23,7 @@ export default function Tempo() {
         <Text style={styles.subheader}>Disponibilidade</Text>
         <Step currentStep={6} />
         <Text style={styles.title}>Agora queremos entender um pouco sobre você!</Text>
-        <Text>Quanto tempo você acredita que possa se dedicar a cuidar de sua plantinha?</Text>
+        <Text style={styles.subtitle}>Quanto tempo você acredita que possa se dedicar a cuidar de sua plantinha?</Text>
 
         {opcoes.map((opcao) => (
           <Radio
@@ -62,11 +62,18 @@ const styles = StyleSheet.create({
     color: '#161D17',
     fontSize: 24,
     fontWeight: 'bold',
+    fontFamily: 'Inter_400Regular',
   },
   subheader: {
     color: '#161D17',
     fontSize: 20,
     textAlign: 'center',
+    fontFamily: 'Inter_400Regular',
+  },
+    subtitle: {
+    color: '#161D17',
+    fontSize: 16,
+    fontFamily: 'Inter_400Regular',
   },
   topContent: {
     gap: 12,

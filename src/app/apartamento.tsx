@@ -22,7 +22,7 @@ export default function Apartamento() {
         <Text style={styles.subheader}>Ambiente</Text>
         <Step currentStep={3} />
         <Text style={styles.title}>Sua plantinha vai morar em apartamento?</Text>
-        <Text>Você mora em apartamento?</Text>
+        <Text style={styles.subtitle}>Você mora em apartamento?</Text>
 
         {opcoes.map((opcao) => (
           <Radio
@@ -60,11 +60,18 @@ const styles = StyleSheet.create({
     color: '#161D17',
     fontSize: 24,
     fontWeight: 'bold',
+    fontFamily: 'Inter_400Regular',
   },
   subheader: {
     color: '#161D17',
     fontSize: 20,
     textAlign: 'center',
+    fontFamily: 'Inter_400Regular',
+  },
+  subtitle: {
+    color: '#161D17',
+    fontSize: 16,
+    fontFamily: 'Inter_400Regular',
   },
   topContent: {
     gap: 12,

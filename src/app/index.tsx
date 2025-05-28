@@ -16,7 +16,7 @@ export default function FormStep1() {
         <Text style={styles.subheader}>Bem-vindo</Text>
         <Step currentStep={1} />
         <Text style={styles.title}>Para começar, queremos saber um pouco mais sobre você</Text>
-        <Text>Como quer ser chamado(a)?</Text>
+        <Text style={styles.subtitle}>Como quer ser chamado(a)?</Text>
         <Input value={nome} onChangeText={setNome} />
       </View>
       <View style={{ flexDirection: 'row' }}>
@@ -42,11 +42,18 @@ const styles = StyleSheet.create({
     color: '#161D17',
     fontSize: 24,
     fontWeight: 'bold',
+    fontFamily: 'Inter_400Regular',
   },
   subheader: {
     color: '#161D17',
     fontSize: 20,
     textAlign: 'center',
+    fontFamily: 'Inter_400Regular',
+  },
+    subtitle: {
+    color: '#161D17',
+    fontSize: 16,
+    fontFamily: 'Inter_400Regular',
   },
   topContent: {
     gap: 12,

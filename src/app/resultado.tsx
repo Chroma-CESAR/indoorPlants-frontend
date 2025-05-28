@@ -14,7 +14,7 @@ export default function Resultado() {
   useEffect(() => {
     async function enviarDados() {
       try {
-        const response = await axios.post('http://192.168.0.1:8000/match', data);
+        const response = await axios.post('http://172.26.71.135/match', data);
         setResposta(response.data);
       } catch (err) {
         console.error(err);
@@ -71,11 +71,13 @@ const styles = StyleSheet.create({
     color: '#161D17',
     fontSize: 24,
     fontWeight: 'bold',
+    fontFamily: 'Inter_400Regular',
   },
   subheader: {
     color: '#161D17',
     fontSize: 20,
     textAlign: 'center',
+    fontFamily: 'Inter_400Regular',
   },
   scrollContent: {
     gap: 16,
@@ -101,19 +103,23 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#161D17',
+    fontFamily: 'Inter_400Regular',
   },
   group: {
     fontSize: 14,
     color: '#555',
+    fontFamily: 'Inter_400Regular',
   },
   compatibility: {
     fontSize: 14,
     marginTop: 4,
     color: '#333',
+    fontFamily: 'Inter_400Regular',
   },
   error: {
     color: 'red',
     textAlign: 'center',
     marginTop: 16,
+    fontFamily: 'Inter_400Regular',
   },
 });

@@ -38,11 +38,13 @@ export const styles = StyleSheet.create({
     height: 40,
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: 24,
   },
   title: {
     fontSize: 16,
     fontWeight: "400",
     color: "#FFFFFF",
+    fontFamily: "Inter_400Regular",
   },
   backButton: {
   height: 40,
@@ -52,7 +54,8 @@ export const styles = StyleSheet.create({
   borderColor: 'black',
   justifyContent: 'center',
   alignItems: 'center',
-  marginRight: 8,
+  marginRight: 24,
+  marginBottom: 24,
 },
 
 });

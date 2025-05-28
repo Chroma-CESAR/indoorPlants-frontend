@@ -19,7 +19,7 @@ export function Radio({ label, selected, onPress }: Props) {
 
 const styles = StyleSheet.create({
   option: {
-    backgroundColor: '#D3E8DC',
+    backgroundColor: '#D7E7D7',
     borderRadius: 8,
     padding: 12,
     flexDirection: 'row',
@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
     height: 20,
     borderRadius: 10,
     borderWidth: 2,
-    borderColor: '#006D3B',
+    borderColor: '#757575',
+    backgroundColor: '#FFFFFF',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 12,
@@ -51,5 +52,6 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     color: '#161D17',
+    fontFamily: 'Inter_400Regular',
   },
 });

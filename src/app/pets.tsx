@@ -23,7 +23,7 @@ export default function Pets() {
         <Text style={styles.subheader}>Animais de estimação</Text>
         <Step currentStep={2} />
         <Text style={styles.title}>Olá {nome}, sua plantinha irá conviver com pets?</Text>
-        <Text>Você tem ou pretende ter pet?</Text>
+        <Text style={styles.subtitle}>Você tem ou pretende ter pet?</Text>
 
         {opcoes.map((opcao) => (
           <Radio
@@ -61,11 +61,18 @@ const styles = StyleSheet.create({
     color: '#161D17',
     fontSize: 24,
     fontWeight: 'bold',
+    fontFamily: 'Inter_400Regular',
   },
   subheader: {
     color: '#161D17',
     fontSize: 20,
     textAlign: 'center',
+    fontFamily: 'Inter_400Regular',
+  },
+  subtitle: {
+    color: '#161D17',
+    fontSize: 16,
+    fontFamily: 'Inter_400Regular',
   },
   topContent: {
     gap: 12,

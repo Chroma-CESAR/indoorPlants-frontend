@@ -37,5 +37,6 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     color: '#161D17',
+    fontFamily: 'Inter_400Regular',
   },
 });

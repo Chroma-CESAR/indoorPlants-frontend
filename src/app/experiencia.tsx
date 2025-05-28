@@ -7,9 +7,9 @@ import { BackButton, Button } from '@/components/button';
 import { useForm } from '../context/formContext';
 
 const opcoes = [
-  { label: 'Iniciante - Nenhum/pouca experiência', value: 0 },
-  { label: 'Amador(a) - Já tive/tenho plantas', value: 1 },
-  { label: 'Experiente - Conheço bastante sobre', value: 2 },
+  { label: 'Iniciante - Pouca experiência', value: 0 },
+  { label: 'Amador(a) - Tive/Tenho plantas', value: 1 },
+  { label: 'Experiente - Conheço bastante', value: 2 },
 ];
 
 export default function Experiencia() {
@@ -23,7 +23,7 @@ export default function Experiencia() {
         <Text style={styles.subheader}>Nível de Experiência</Text>
         <Step currentStep={5} />
         <Text style={styles.title}>Você já tem experiencia em cuidar de plantas?</Text>
-        <Text>Qual seu nível de conhecimento na área?</Text>
+        <Text style={styles.subtitle} >Qual seu nível de conhecimento na área?</Text>
 
         {opcoes.map((opcao) => (
           <Radio
@@ -62,11 +62,18 @@ const styles = StyleSheet.create({
     color: '#161D17',
     fontSize: 24,
     fontWeight: 'bold',
+    fontFamily: 'Inter_700Bold',
   },
   subheader: {
     color: '#161D17',
     fontSize: 20,
     textAlign: 'center',
+    fontFamily: 'Inter_400Regular',
+  },
+    subtitle: {
+    color: '#161D17',
+    fontSize: 16,
+    fontFamily: 'Inter_400Regular',
   },
   topContent: {
     gap: 12,

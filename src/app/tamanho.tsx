@@ -10,7 +10,7 @@ const opcoes = [
   { label: 'Pequeno - até 30 cm', value: 0 },
   { label: 'Médio - 31 cm até 90 cm', value: 1 },
   { label: 'Grande - 91 cm a 150 cm', value: 2 },
-  { label: 'Muito Grande - acima de 150 cm', value: 3 },
+  { label: 'Muito Grande - mais de 150 cm', value: 3 },
 ];
 
 export default function Tamanho() {
@@ -24,7 +24,7 @@ export default function Tamanho() {
         <Text style={styles.subheader}>Tamanho do Espaço</Text>
         <Step currentStep={4} />
         <Text style={styles.title}>Quanto espaço poderá dedicar a plantinha?</Text>
-        <Text>Espaço que a planta irá ocupar:</Text>
+        <Text style={styles.subtitle}>Espaço que a planta irá ocupar:</Text>
 
         {opcoes.map((opcao) => (
           <Radio
@@ -62,11 +62,17 @@ const styles = StyleSheet.create({
       color: '#161D17',
       fontSize: 24,
       fontWeight: 'bold',
+      fontFamily: 'Inter_400Regular',
     },
     subheader: {
       color: '#161D17',
       fontSize: 20,
       textAlign: 'center',
+      fontFamily: 'Inter_400Regular',
+    },
+    subtitle: {
+      color: '#161D17',
+      fontSize: 16,
     },
     topContent: {
       gap: 12,
