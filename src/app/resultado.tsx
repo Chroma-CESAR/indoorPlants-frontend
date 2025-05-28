@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
   },
   info: {
     flex: 1,
-    padding: 12,
+    padding: 8,
     justifyContent: 'center',
   },
   name: {
