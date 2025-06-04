@@ -13,6 +13,7 @@ import { useForm } from "../context/formContext";
 import type { Plant } from "@/types/plant";
 import ModalPlant from "@/components/modalPlant";
 import axios from "axios";
+import { BackButton, Button } from "@/components/button";
 
 export default function Resultado() {
   const { data } = useForm();
@@ -77,9 +78,9 @@ export default function Resultado() {
               </View>
             </TouchableOpacity>
           ))}
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Continuar</Text>
-          </TouchableOpacity>
+          <View style={{ flexDirection: "row", marginTop: 40 }}>
+            <Button title="Próximo" />
+          </View>
         </ScrollView>
       )}
 
